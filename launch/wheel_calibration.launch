@@ -1,12 +1,11 @@
 <?xml version="1.0"?>
 <launch>
     <arg name="file_name" default="robot_params.env"/>
-    <arg name="file_path" default="/home/robot/robot_params/"/> <!-- VERY IMPORTANT TO END THE PATH WITH '/' -->
+    <arg name="file_path" default="/home/robot/robot_params"/>
     <arg name="env_var" default="ROBOT_JOINT_POTENTIOMETER_VOLTAGE_CALIBRATION"/>
     <arg name="topic_sub" default="robotnik_base_hw/io"/>
     <arg name="calibration_duration" default="30"/>
-    <arg name="initial_calibration" default="true"/>
-    <arg name="kill_node" default="true"/>
+    <arg name="calibrate_once" default="false"/>
 
     <node name="wheel_calibrator" pkg="robotnik_wheels_calibration" type="calibration_node.py" output="screen">
         <param name="file_name" value="$(arg file_name)"/>
@@ -14,7 +13,6 @@
         <param name="env_var" value="$(arg env_var)"/>
         <param name="topic_sub" value="$(arg topic_sub)"/>
         <param name="calibration_duration" value="$(arg calibration_duration)"/>
-        <param name="initial_calibration" value="$(arg initial_calibration)"/>
-        <param name="kill_node" value="$(arg kill_node)"/>
+        <param name="calibrate_once" value="$(arg calibrate_once)"/>
     </node>
 </launch>
