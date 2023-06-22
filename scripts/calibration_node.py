@@ -10,12 +10,12 @@ class CalibrationNode:
         self.values = []
         self.mean = []
         self.start_calibration = False
-        self.calibration_duration = 1
+        self.calibration_duration = 30
         self.n = 0
         self.calibrate_once = False
         self.len_unknown = True
         self.init_time = rospy.get_rostime()
-        self.file_name = 'robot_params (copy).env'
+        self.file_name = 'robot_params.env'
         self.file_path = '/home/robot/robot_params/'
         self.env_var = 'ROBOT_JOINT_POTENTIOMETER_VOLTAGE_CALIBRATION'
         self.topic_sub = '/robot/robotnik_base_hw/io'
