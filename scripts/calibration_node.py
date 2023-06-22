@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import rospy
 from robotnik_msgs.msg import inputs_outputs
 from std_srvs.srv import Trigger, TriggerResponse, TriggerRequest
